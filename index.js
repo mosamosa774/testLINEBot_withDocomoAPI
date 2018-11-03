@@ -22,6 +22,7 @@ const bot = new line.Client(line_config);
                 // この処理の対象をイベントタイプがメッセージで、かつ、テキストタイプだった場合に限定。
                 if (event.type == "message" && event.message.type == "text"){
                    str = getJSON(event.message.text);
+                   console.log("touch:"+str);
                    events_processed.push(bot.replyMessage(event.replyToken, {
                    type: "text",
                    text: str
