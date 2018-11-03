@@ -45,7 +45,7 @@ const bot = new line.Client(line_config);
 
 function getJSON(message) {
     var xhr = new XMLHttpRequest();
-    xhr.open("POST", "https://api.apigw.smt.docomo.ne.jp/naturalChatting/v1/dialogue?APIKEY=apiKey", false);
+    xhr.open("POST", "https://api.apigw.smt.docomo.ne.jp/naturalChatting/v1/dialogue?APIKEY="+apiKey, false);
     xhr.setRequestHeader("Content-Type", "application/json");
     xhr.onreadystatechange = function() {//状態が変化すると関数が呼び出されます。
     if(this.readyState == XMLHttpRequest.DONE && this.status == 200) {
