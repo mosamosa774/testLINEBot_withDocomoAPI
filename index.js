@@ -17,9 +17,11 @@ const bot = new line.Client(line_config);
             // すべてのイベント処理のプロミスを格納する配列。
             let events_processed = [];
       
+            console.log("here1");
             // イベントオブジェクトを順次処理。
             req.body.events.forEach((event) => {
                 // この処理の対象をイベントタイプがメッセージで、かつ、テキストタイプだった場合に限定。
+                console.log("here2");
                 if (event.type == "message" && event.message.type == "text"){
                    str = getJSON(event.message.text);
                    console.log("touch:"+str);
