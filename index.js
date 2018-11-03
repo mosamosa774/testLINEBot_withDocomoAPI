@@ -9,7 +9,7 @@ const line_config = {
 const bot = new line.Client(line_config);
 
 
-function getJSON(message) {
+/*function getJSON(message) {
     var xhr = new XMLHttpRequest();
     xhr.open("POST", "https://api.apigw.smt.docomo.ne.jp/naturalChatting/v1/dialogue?APIKEY="+apiKey, false);
     xhr.setRequestHeader("Content-Type", "application/json");
@@ -19,7 +19,7 @@ function getJSON(message) {
     }
     xhr.send("{\"language\": \"ja-JP\",\"botId\": \"Chatting\",\"appId\": \""+appid+"\",\"voiceText\": \""+message+"\",\"clientData\": {\"option\": {\"nickname\": \"光\",\"nicknameY\": \"ヒカリ\",\"sex\": \"女\",\"bloodtype\": \"B\",\"birthdateY\": \"1997\",\"birthdateM\": \"5\",\"birthdateD\": \"30\",\"age\": \"16\",\"constellations\": \"双子座\",\"place\": \"東京\",\"mode\": \"dialog\"}},\"appRecvTime\": \"2015-05-05 13:30:00\",\"appSendTime\": \"2015-05-05 13:31:00\"}");
 }
-
+*/
     server.listen(process.env.PORT || 3000);
         // -----------------------------------------------------------------------------
         // ルーター設定
@@ -38,11 +38,11 @@ function getJSON(message) {
                    text: "ちょっとまってね。"
                 }));
                 if (event.type == "message" && event.message.type == "text"){
-                   str = getJSON(event.message.text);
-                   console.log("touch:"+str);
+                   //str = getJSON(event.message.text);
+                   //console.log("touch:"+str);
                    events_processed.push(bot.replyMessage(event.replyToken, {
                    type: "text",
-                   text: str
+                   text: "hai"
                 }));
                 }
                 else {
